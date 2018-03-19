@@ -1,1 +1,32 @@
+#1.SORU
+#tSM=Toplam Satış Miktarı
+#hM=Hammadde Giderleri
+#bOG=Bakım Onarım Giderleri
+#sG=Sevkiyat Giderleri
+#sAHG=Satın alınan Hizmet Giderleri
+#kdCiro=Katma Değer Ciro
+
+def gelirHesapla(tSM):
+    toplamGelir=tSM
+    return toplamGelir
+def giderHesapla(hM,bOG,sG,sAHG):
+    toplamGider=hM+bOG+sG+sAHG
+    return toplamGider
+def kdcHesapla(toplamGelir,toplamGider):
+    kdc=toplamGelir-toplamGider
+    if(kdc>1000):
+        print("İşletme Katma Değeri Yüksektir.")
+    elif(500<kdc<999):
+        print("İşletme Katma Değer Cirosu Normaldir.")
+    else:
+        print("İşletme Katma Değer Cirosu Düşüktür.")
+print("Lütfen İstenilen Değerleri Giriniz")
+tSM=int(input("Toplam Satış Miktarını Giriniz:"))
+hM=int(input("Hammadde Giderini Giriniz:"))
+bOG=int(input("Bakım Onarım Giderleri:"))
+sG=int(input("Sevkiyat Giderleri:"))
+sAHG=int(input("Satın Alınan Hizmet Giderleri"))
+gelir=gelirHesapla(tSM)
+gider=giderHesapla(hM,bOG,sG,sAHG)
+kdcHesapla(gelir,gider)
 
