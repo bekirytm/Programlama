@@ -30,3 +30,110 @@ gelir=gelirHesapla(tSM)
 gider=giderHesapla(hM,bOG,sG,sAHG)
 kdcHesapla(gelir,gider)
 
+#2.SORU
+#mCS2016= 2016 yılını müşterilerle çalışma süresi
+#mCS2017= 2017 yılını müşterilerle çalışma süresi
+#cS2016= 2016 yılı çalışma süresi
+#tMS2016= 2016 yılı toplam müşteri sayısı
+#cS2017= 2017 yılı çalışma süresi
+#tMS2017= 2017 yılı toplam müşteri sayısı
+cS2016=170
+tMS2016=50
+cS2017=cS2016+50
+tMS2017=tMS2016+20
+def mCS2016(cS2016,tMS2016):
+    mCS2016=cS2016/tMS2016
+    return mCS2016
+def mCS2017(cS2017,tMS2017):
+    mCS2017=cS2017/tMS2017
+    return mCS2017
+hesap=mCS2016(cS2016,tMS2016)-mCS2017(cS2017,tMS2017)
+sonuc=format(float(hesap),".2")
+print("2017 ve 2016 yılları Müşterilerle Çalışma Süreleri Arasındaki Fark:",sonuc)
+
+3.SORU
+
+def iGelirHesapla(iYG,iFG,iÜSG):
+    global iGelir
+    iGelir=iYG+iFG+iÜSG
+    return iGelir
+def iGiderHesapla(iÇM,iKG,iDM):
+    global iGider
+    iGider=iÇM+iKG+iDM
+    return iGider
+def sGelirHesapla(sYG,sSG,sETG,sÜSG):
+    global sGelir
+    sGelir=sYG+sSG+sETG+sÜSG
+    return sGelir
+def sGiderHesapla(sÇM,sKG,sBM):
+    global sGider
+    sGider=sÇM+sKG+sBM
+    return sGider
+def iKarHesapla(iGelir,iGider):
+    ikar=iGelir-iGider
+    return ikar
+def sKarHesapla(sGelir,sGider):
+    skar=sGelir-sGider
+    return skar
+def karHesapla(ikar,skar):
+    kar=ikar-skar
+    if (kar>=5000):
+        print("İşletme Çok Karlı.")
+    elif(1000<kar<5000):
+        print("İşletme Karı Normal.")
+    else:
+        print("İşletme Yeterince Karda Değil.")
+print("İstenilen Değerleri Giriniz")
+iYG=int(input("İlk 6 Aylık Yazılım Geliri:"))
+iFG=int(input("İlk 6 Aylık Finansman Geliri:"))
+iÜSG=int(input("İlk 6 Aylık Ürün Satış Geliri:"))
+iÇM=int(input("İlk 6 Aylık Çalışan Maaşları:"))
+iKG=int(input("İlk 6 Aylık Kira Giderleri:"))
+iDM=int(input("İlk 6 Aylık Donanım Maliyeti:"))
+sYG=int(input("Son 6 Aylık Yazılım Geliri:"))
+sSG=int(input("Son 6 Aylık Sponsorluk Geliri:"))
+sETG=int(input("Son 6 Aylık E Ticaret Geliri:"))
+sÜSG=int(input("Son 6 Aylık Ürün Satış Geliri:"))
+sÇM=int(input("Son 6 Aylık Çalışan Maaşları:"))
+sKG=int(input("Son 6 Aylık Kira Gideri:"))
+sBM=int(input("Son 6 Aylık Bakım Maliyeti:"))
+ige=iGelirHesapla(iYG,iFG,iÜSG)
+igi=iGiderHesapla(iÇM,iKG,iDM)
+sge=sGelirHesapla(sYG,sSG,sETG,sÜSG)
+sgi=sGiderHesapla(sÇM,sKG,sBM)
+ik=iKarHesapla(ige,igi)
+sk=sKarHesapla(sge,sgi)
+karHesapla(ik,sk)
+
+4.SORU
+
+#k1=Dönem Başı Koltuk Sayısı
+#y1=Dönem Başı Yatak Sayısı
+#d1=Dönem Başı Dolap Sayısı
+#k2=Dönem Sonu Koltuk Sayısı
+#y2=Dönem Sonu Yatak Sayısı
+#d2=Dönem Sonu Dolap Sayısı
+#dbs=Dönem Başı Stok
+#dss=Dönem Sonu Stok
+#ort=Ortalama
+def donemBası(k1,y1,d1):
+    global donemBS
+    donemBS=k1+y1+d1
+    return donemBS
+k1=int(input("Dönem Başı Koltuk Sayısını Giriniz:"))
+y1=int(input("Dönem Başı Yatak Sayısını Giriniz:"))
+d1=int(input("Dönem Başı Dolap Sayısını Giriniz:"))
+dbs=donemBası(k1,y1,d1)
+print("Dönem Başı Stoğunuz:",dbs)
+
+def donemSonu(k2,y2,d2):
+    global donemSS
+    donemSS=k2+y2+d2
+    return donemSS
+k2=int(input("Dönem Sonu Koltuk Sayısını Giriniz:"))
+y2=int(input("Dönem Sonu Yatak Sayısını Giriniz:"))
+d2=int(input("Dönem Sonu Dolap Sayısını Giriniz:"))
+dss=donemSonu(k2,y2,d2)
+print("Dönem Sonu Stoğunuz:",dss)
+ort=(dbs+dss)/2
+print("Ortalama Stoğunuz:",ort)
