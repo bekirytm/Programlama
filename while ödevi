@@ -1,1 +1,70 @@
 
+#1.SORU
+#satisM=Satış Miktarı
+#birimSF=Birim Satış fiyatı
+satisM=500
+birimSF=20
+ciro=5000
+i=0
+while (ciro<=500000):
+    ciro=ciro+(satisM*birimSF)
+    satisM=satisM+200
+    birimSF=birimSF+10
+    i=i+1
+print("500000'den fazla kar",i,".ayda tamamlanmıştır.")
+
+#2.SORU
+stokM=10000
+i=0
+satilan_urun=500
+alınan_urun=100
+fark=alınan_urun-satilan_urun
+while (stokM>0):
+    stokM=stokM+fark
+    i=i+1
+print(i,".ayda stok sıfırlanır.")
+
+
+#3.SORU
+s=0
+while True:
+    print("Bir sayı Giriniz: ,Çıkmak için [0](sıfır)")
+    girilen=int(input("Sayı:"))
+    if (girilen!=0):
+        a=girilen%3
+        s=s+a
+        print("toplam:",s)
+    else:
+        print("Çıkış Yapıldı.")
+        break
+
+#4.SORU
+
+calisan=50
+yevmiye=90
+aylikM=0
+haftalik_maas=630
+aylik_maas=0
+while aylik_maas<=22:
+    haftalik_mesai=int(input("haaftalik Mesai:"))
+    aylik_mesai=haftalik_mesai*4
+    haftalik_maas=haftalik_maas+(haftalik_mesai*yevmiye*0.10)
+    aylik_maas=aylik_maas+haftalik_maas*4
+    print("aylik maaş:",aylik_maas)
+else:
+    print("aylık mesai 22 saatten fazla olamaz.")
+
+#5.SORU
+g_uretim=200
+g_def_urun=0
+t_def_urun=0
+i=0
+while(g_def_urun<g_uretim*0.20):
+    g_def_urun=int(input("Bugünki Defolu Ürün Sayısını Giriniz:"))
+    t_def_urun=t_def_urun+g_def_urun
+    i=i+1
+    if(g_def_urun>g_uretim*0.20):
+        print("Defolu ürün sayısı limiti aştı.")
+        break
+    else:
+        print(i,"Günlük","Defolu Ürün Sayısı:",t_def_urun)
